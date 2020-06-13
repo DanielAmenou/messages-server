@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const logger = require("../logger")(__filename);
 
-let DatabaseUri = `/${process.env.MONGODB_URI}/${process.env.DB_NAME}`;
+let DatabaseUri = `${process.env.MONGODB_URI}/${process.env.DB_NAME}`;
 
 const connect = (testName) => {
   if (testName && process.env.NODE_ENV === "test") DatabaseUri += "_" + testName;
